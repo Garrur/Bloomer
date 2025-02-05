@@ -2,7 +2,7 @@
 
 import { connectToDB } from "@/lib/mongodb"
 import { Post } from "@/lib/models/post"
-import { auth } from "@clerk/nextjs"
+import { auth } from "@clerk/nextjs/server"
 
 export async function createPost(data: { content: string; type: "text" | "video" }) {
   const { userId } = await auth()
