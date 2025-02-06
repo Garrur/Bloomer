@@ -9,13 +9,26 @@ export default async function ProfilePage({
 }: {
   params: { id: string }
 }) {
-  const { userId } = auth()
-  if (!userId) redirect("/sign-in")
+  const { userId } = await auth()
+  if (!userId) redirect("/profile")
 
   const posts = await getUserPosts(params.id)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
+      >
+        <source
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/25276390-nwB1N1TMcFEyIe1VhjSWZCUeUpcmlK.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
       <Header />
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Your Posts</h1>

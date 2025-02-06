@@ -17,17 +17,17 @@ export default function Header() {
         </div>
         <nav className="flex items-center space-x-6">
           <Link href="/feed">
-            <Button variant="ghost" className="text-white hover:text-white/80">
+            <Button variant="ghost" className="text-white hover:text-black/80">
               Feed
             </Button>
           </Link>
           <Link href="/explore">
-            <Button variant="ghost" className="text-white hover:text-white/80">
+            <Button variant="ghost" className="text-white hover:text-black/80">
               Explore
             </Button>
           </Link>
           <Link href={`/profile/${user?.id}`}>
-            <Button variant="ghost" className="text-white hover:text-white/80">
+            <Button variant="ghost" className="text-white hover:text-black/80">
               Profile
             </Button>
           </Link>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useCallback } from "react"
 import { motion } from "framer-motion"
 import Header from "@/components/Header"
 import Post from "@/components/Post"
@@ -10,9 +10,9 @@ import { createPost, getPosts } from "../actions/posts"
 import useInfiniteScroll from "@/hooks/useInfiniteScroll"
 
 interface PostType {
-  id: string
+  id: number
   content: string
-  type: "video" | "text"  
+  type: "video" | "text"
   author: string
   likes: number
   comments: number
@@ -39,10 +39,6 @@ export default function FeedPage() {
   }, [page, isLoading])
 
   const [infiniteScrollRef] = useInfiniteScroll(fetchMorePosts)
-
-  useEffect(() => {
-    fetchMorePosts()
-  }, [fetchMorePosts]) // Added fetchMorePosts to the dependency array
 
   const handleCreatePost = async (newPost: { content: string; type: "text" | "video" }) => {
     try {
