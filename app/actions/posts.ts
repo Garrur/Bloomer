@@ -5,7 +5,7 @@ import { Post } from "@/lib/models/post"
 import { auth } from "@clerk/nextjs/server"
 
 export async function createPost(data: { content: string; type: "text" | "video" }) {
-  const { userId } = await auth()
+  const { userId } = auth()
   if (!userId) throw new Error("Unauthorized")
 
   await connectToDB()

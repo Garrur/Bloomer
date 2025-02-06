@@ -9,7 +9,7 @@ export default function Header() {
   const { user } = useUser()
 
   return (
-    <header className="sticky top-0 z-50 bg-black/50 backdrop-blur-md shadow-md">
+    <header className="sticky top-0 z-50 bg-black/70 backdrop-blur-md shadow-md">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Sun className="h-8 w-8 text-yellow-500" />

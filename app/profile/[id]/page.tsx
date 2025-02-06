@@ -9,7 +9,7 @@ export default async function ProfilePage({
 }: {
   params: { id: string }
 }) {
-  const { userId } = await auth()
+  const { userId } = auth()
   if (!userId) redirect("/sign-in")
 
   const posts = await getUserPosts(params.id)

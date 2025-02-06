@@ -5,7 +5,7 @@ import Post from "@/components/Post"
 import { getPosts } from "@/app/actions/posts"
 
 export default async function ExplorePage() {
-  const { userId } = await auth()
+  const { userId } = auth()
   if (!userId) redirect("/sign-in")
 
   const posts = await getPosts(1, 20)

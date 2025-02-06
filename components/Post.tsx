@@ -19,14 +19,14 @@ interface PostProps {
 export default function Post({ post }: PostProps) {
   return (
     <motion.div
-      className="bg-white/10 backdrop-blur-md rounded-lg shadow-lg overflow-hidden"
+      className="bg-white/20 backdrop-blur-md rounded-lg shadow-lg overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="p-6">
         <Link href={`/posts/${encodeURIComponent(post.id)}`}>
-          <h3 className="text-lg font-semibold mb-2 hover:text-blue-300 transition-colors">{post.author}</h3>
+          <h3 className="text-lg font-semibold mb-2 hover:text-blue-300 transition-colors text-white">{post.author}</h3>
         </Link>
         <AnimatePresence mode="wait">
           {post.type === "video" ? (
@@ -61,7 +61,7 @@ export default function Post({ post }: PostProps) {
                 }}
               />
               <motion.p
-                className="text-xl mb-4 relative z-10 p-6 bg-black/20 rounded-lg"
+                className="text-xl mb-4 relative z-10 p-6 bg-black/40 rounded-lg text-white"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
